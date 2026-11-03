@@ -21,7 +21,7 @@ const SITE = {
     ],
     facts: [
       { label: "PENDIDIKAN", value: "ITB · Angkatan 2022" },
-      { label: "BAHASA", value: "Bahasa Indonesia & Inggris" },
+      { label: "TANGGAL KELULUSAN", value: "18 Agt 2026" },
     ],
     highlights: [
       { title: "Sistem Informasi Cerdas", label: "SPESIALISASI SELESAI", desc: "Menyelesaikan spesialisasi Sistem Informasi Cerdas di Institut Teknologi Bandung, dengan pembelajaran manajemen data, analitik, dan AI untuk bisnis. Spesialisasi ini menghubungkan minat saya pada teknologi dengan kebutuhan bisnis dan dukungan pengambilan keputusan." },
