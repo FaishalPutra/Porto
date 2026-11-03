@@ -20,7 +20,7 @@ const SITE = {
       "Selama studi, saya mempelajari manajemen data, analisis kebutuhan perusahaan, pemodelan basis data, dan AI untuk bisnis. Bekal ini membantu saya menghubungkan kebutuhan organisasi dengan sistem informasi yang mendukungnya. Saya tertarik pada pemanfaatan data dan sistem cerdas untuk meningkatkan efektivitas operasional serta mendukung pengambilan keputusan.",
     ],
     facts: [
-      { label: "PENDIDIKAN", value: "ITB · Angkatan 2026" },
+      { label: "PENDIDIKAN", value: "ITB · Angkatan 2022" },
       { label: "BAHASA", value: "Bahasa Indonesia & Inggris" },
     ],
     highlights: [
