@@ -4,7 +4,7 @@ const SITE = {
   name: "Muhammad Faishal Putra",
   firstName: "Faishal",
   status: "TERBUKA UNTUK PELUANG",
-  location: "Bandung, Indonesia",
+  location: "Jakarta, Indonesia",
   email: "emfaishalpe@gmail.com",
   roles: [
     "Business & IT Systems Analyst",
@@ -12,7 +12,7 @@ const SITE = {
     "Business Analysis & Data Analytics",
   ],
   tagline: "Saya menghubungkan kebutuhan bisnis dengan teknologi melalui analisis sistem, arsitektur perusahaan, dan proyek berbasis data. Lulusan Sistem dan Teknologi Informasi dari Institut Teknologi Bandung.",
-  heroChips: ["Bandung, Indonesia", "ITB Graduate", "Business & IT Analysis"],
+  heroChips: ["Jakarta, Indonesia", "ITB Graduate", "Business & IT Analysis"],
   about: {
     role: "Business & IT Systems Analyst",
     paragraphs: [
