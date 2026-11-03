@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Faishal Putra · Portfolio</title>
+  <meta name="description" content="Muhammad Faishal Putra · Lulusan Sistem dan Teknologi Informasi ITB dengan minat pada analisis bisnis, arsitektur perusahaan, dan analitik data." />
+  <meta name="theme-color" content="#060608" />
+
+  <!-- Social share cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Muhammad Faishal Putra · Portfolio" />
+  <meta property="og:description" content="Muhammad Faishal Putra · Lulusan Sistem dan Teknologi Informasi ITB dengan minat pada analisis bisnis, arsitektur perusahaan, dan analitik data." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Muhammad Faishal Putra · Portfolio" />
+  <meta name="twitter:description" content="Muhammad Faishal Putra · Lulusan Sistem dan Teknologi Informasi ITB dengan minat pada analisis bisnis, arsitektur perusahaan, dan analitik data." />
+
+  <!-- Theme init (before paint, prevents flash) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('pf-theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232b7de0'/%3E%3Cstop offset='1' stop-color='%23a50044'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%23060608'/%3E%3Ccircle cx='32' cy='32' r='13' fill='none' stroke='url(%23g)' stroke-width='5'/%3E%3Ccircle cx='47' cy='17' r='5' fill='%23ffed00'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════ PRELOADER ══════════════ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-mark">
+      <span class="preloader-ring"></span>
+      <span class="preloader-text mono" id="preloaderText">LOADING</span>
+    </div>
+    <div class="preloader-bar"><span></span></div>
+  </div>
+
+  <!-- ══════════════ AMBIENT BACKGROUND ══════════════ -->
+  <div class="bg" aria-hidden="true">
+    <canvas id="bgCanvas"></canvas>
+    <div class="noise"></div>
+  </div>
+
+  <!-- Custom cursor ring (desktop only) -->
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"><span class="cursor-label" id="cursorLabel"></span></div>
+
+  <!-- Scroll progress -->
+  <div class="progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+  <!-- ══════════════ NAVIGATION ══════════════ -->
+  <header class="nav" id="siteNav">
+    <div class="nav-inner glass">
+      <a href="#home" class="brand" data-cursor aria-label="Kembali ke atas">
+        <span class="brand-dot"></span>
+        <span class="brand-name mono" id="brandName">Faishal</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#home" class="active" data-cursor>Home</a></li>
+          <li><a href="#about" data-cursor>About</a></li>
+          <li><a href="#experience" data-cursor>Experience</a></li>
+          <li><a href="#skills" data-cursor>Skills</a></li>
+          <li><a href="#projects" data-cursor>Projects</a></li>
+          <li><a href="#contact" data-cursor>Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" data-cursor aria-label="Ganti tema warna">
+          <svg class="ic-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="ic-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuToggle" data-cursor aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <ul>
+        <li style="--i:0"><a href="#home"><span class="mono">01</span>Home</a></li>
+        <li style="--i:1"><a href="#about"><span class="mono">02</span>About</a></li>
+        <li style="--i:2"><a href="#experience"><span class="mono">03</span>Experience</a></li>
+        <li style="--i:3"><a href="#skills"><span class="mono">04</span>Skills</a></li>
+        <li style="--i:4"><a href="#projects"><span class="mono">05</span>Projects</a></li>
+        <li style="--i:5"><a href="#contact"><span class="mono">06</span>Contact</a></li>
+      </ul>
+      <p class="mobile-menu-foot mono" id="mobileMenuMail">emfaishalpe@gmail.com</p>
+    </nav>
+  </div>
+
+  <main id="top">
+
+    <!-- ══════════════ 01 · HERO ══════════════ -->
+    <section class="hero" id="home" aria-label="Perkenalan">
+      <div class="container hero-inner">
+        <p class="hero-kicker mono reveal"><span class="pulse-dot"></span><span id="heroStatus">TERBUKA UNTUK PELUANG</span></p>
+
+        <h1 class="hero-title">
+          <span class="line reveal" style="--d:.05s">Halo, saya</span>
+          <span class="line reveal" style="--d:.15s"><span class="grad" id="heroName">Faishal</span><span class="hero-dot">.</span></span>
+        </h1>
+
+        <div class="hero-role mono reveal" style="--d:.3s">
+          <span id="roleText">Business &amp; IT Systems Analyst</span>
+        </div>
+
+        <p class="hero-tagline reveal" style="--d:.4s" id="heroTagline">
+          Saya menghubungkan kebutuhan bisnis dengan teknologi melalui analisis sistem, arsitektur perusahaan, dan proyek berbasis data. Lulusan Sistem dan Teknologi Informasi dari Institut Teknologi Bandung.
+        </p>
+
+        <div class="hero-cta reveal" style="--d:.5s">
+          <a href="#projects" class="btn btn-primary magnetic" data-cursor><span>Lihat Proyek</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+          </a>
+          <a href="#about" class="btn btn-ghost magnetic" data-cursor><span>Tentang Saya</span></a>
+        </div>
+
+        <ul class="hero-meta reveal" style="--d:.62s" id="heroChips"></ul>
+      </div>
+
+      <a href="#about" class="scroll-hint" data-cursor aria-label="Gulir ke bagian Tentang">
+        <span class="mono">GULIR</span>
+        <span class="scroll-line"><span></span></span>
+      </a>
+    </section>
+
+    <!-- ══════════════ 02 · ABOUT ══════════════ -->
+    <section class="section" id="about" aria-labelledby="aboutTitle">
+      <div class="container">
+        <header class="section-head reveal" data-num="01">
+          <p class="section-num mono">01 · ABOUT</p>
+          <h2 class="section-title" id="aboutTitle">Behind the <span class="grad">work</span></h2>
+        </header>
+
+        <div class="about-grid">
+          <!-- Profile card -->
+          <aside class="profile-card glass tilt reveal" id="profileCard" data-cursor-label="HAI">
+            <div class="profile-photo">
+              <img src="assets/faishal.jpg" alt="Muhammad Faishal Putra di Institut Teknologi Bandung" width="2624" height="3936" loading="lazy" decoding="async" />
+            </div>
+            <h3 class="profile-name" id="profileName">Muhammad Faishal Putra</h3>
+            <p class="profile-role mono" id="profileRole">Business &amp; IT Systems Analyst</p>
+            <ul class="profile-meta" id="profileMeta"></ul>
+          </aside>
+
+          <!-- Introduction + personal highlights -->
+          <div class="about-body">
+            <div class="about-text reveal" id="aboutParas"></div>
+            <div class="about-highlights" id="aboutHighlights"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work experience -->
+    <section class="section" id="experience" aria-labelledby="experienceTitle">
+      <div class="container">
+        <header class="section-head reveal" data-num="02">
+          <p class="section-num mono">02 · EXPERIENCE</p>
+          <h2 class="section-title" id="experienceTitle">Work <span class="grad">experience</span></h2>
+        </header>
+        <div id="experienceList"></div>
+      </div>
+    </section>
+
+    <!-- ══════════════ 03 · SKILLS ══════════════ -->
+    <section class="section" id="skills" aria-labelledby="skillsTitle">
+      <div class="container">
+        <header class="section-head reveal" data-num="03">
+          <p class="section-num mono">03 · EXPERTISE</p>
+          <h2 class="section-title" id="skillsTitle">What I <span class="grad">work with</span></h2>
+        </header>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ══════════════ 04 · PROJECTS ══════════════ -->
+    <section class="section" id="projects" aria-labelledby="projectsTitle">
+      <div class="container">
+        <header class="section-head reveal" data-num="04">
+          <p class="section-num mono">04 · SELECTED WORK</p>
+          <h2 class="section-title" id="projectsTitle">Projects &amp; <span class="grad">case studies</span></h2>
+        </header>
+
+        <div class="filters reveal" id="filterRow" role="group" aria-label="Filter proyek"></div>
+        <div class="project-carousel" id="projectCarousel">
+          <div class="projects-grid" id="projectsGrid" tabindex="0" aria-label="Project carousel"></div>
+          <div class="project-carousel-controls">
+            <span class="project-counter mono" id="projectCounter" aria-live="polite">01 / 09</span>
+            <div class="project-carousel-arrows">
+              <button class="icon-btn carousel-arrow" id="previousProject" type="button" aria-label="Previous project" disabled>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              </button>
+              <button class="icon-btn carousel-arrow" id="nextProject" type="button" aria-label="Next project">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured project -->
+        <div class="featured-wrap" hidden>
+          <p class="featured-kicker mono reveal">★ FINAL PROJECT SPOTLIGHT</p>
+          <article class="featured glass reveal" id="featuredCard">
+            <div class="featured-media" id="featuredMedia">
+              <div class="frame">
+                <div class="frame-body" id="featuredPreview"><span class="mono">RECOMMENDATION FLOW</span></div>
+              </div>
+              <div class="frame-thumbs">
+                <div class="frame mini"><span class="mono">PEOPLE-TO-PROJECT</span></div>
+                <div class="frame mini"><span class="mono">WEB APPLICATION</span></div>
+              </div>
+            </div>
+            <div class="featured-info">
+              <h3 class="featured-title" id="featuredTitle">Student Collaboration Matching System</h3>
+              <p class="featured-desc" id="featuredDesc"></p>
+              <ul class="chip-row" id="featuredTech"></ul>
+              <div class="accordion" id="featuredAccordion"></div>
+              <div class="featured-links" id="featuredLinks"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ 05 · JOURNEY ══════════════ -->
+    <!-- Bagian perjalanan disembunyikan sementara. -->
+    <section class="section" id="journey" aria-labelledby="journeyTitle" hidden>
+      <div class="container">
+        <header class="section-head reveal" data-num="04">
+          <p class="section-num mono">04 · TIMELINE</p>
+          <h2 class="section-title" id="journeyTitle">The <span class="grad">journey</span> so far</h2>
+        </header>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section class="section" id="certifications" aria-labelledby="certificationsTitle">
+      <div class="container">
+        <header class="section-head reveal" data-num="05">
+          <p class="section-num mono">05 · CERTIFICATIONS</p>
+          <h2 class="section-title" id="certificationsTitle">Learning &amp; <span class="grad">credentials</span></h2>
+        </header>
+        <div class="certifications-grid" id="certificationsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ══════════════ 06 · CURRENTLY EXPLORING ══════════════ -->
+    <section class="section exploring" id="exploring" aria-labelledby="exploringTitle">
+      <div class="container">
+        <header class="section-head reveal center" data-num="06">
+          <p class="section-num mono">06 · RADAR</p>
+          <h2 class="section-title" id="exploringTitle">Areas of <span class="grad">interest</span></h2>
+        </header>
+      </div>
+      <div class="marquee" id="marqueeA" aria-hidden="true"><div class="marquee-track"></div></div>
+      <div class="marquee reverse" id="marqueeB" aria-hidden="true"><div class="marquee-track"></div></div>
+    </section>
+
+    <!-- ══════════════ 07 · CONTACT ══════════════ -->
+    <section class="section contact" id="contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <header class="section-head reveal center" data-num="07">
+          <p class="section-num mono">07 · CONTACT</p>
+        </header>
+
+        <h2 class="contact-big reveal" id="contactTitle">
+          Let's build something<br /><span class="grad">interesting.</span>
+        </h2>
+
+        <div class="contact-actions reveal">
+          <button class="btn btn-primary magnetic" id="emailBtn" data-cursor-label="SALIN">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m2 7 10 6L22 7"/></svg>
+            <span id="emailText">emfaishalpe@gmail.com</span>
+          </button>
+          <p class="contact-hint mono">klik untuk menyalin</p>
+        </div>
+
+        <ul class="social-row reveal" id="socialRow"></ul>
+        <ul class="hero-meta center reveal" id="contactChips"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="mono">© <span id="year">2026</span> · <span id="footerName">Muhammad Faishal Putra</span></p>
+      <p class="mono footer-note">Kebutuhan bisnis. Teknologi. Insight yang jelas.</p>
+      <button class="icon-btn" id="toTop" data-cursor aria-label="Kembali ke atas">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <!-- ══════════════ PROJECT MODAL ══════════════ -->
+  <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-panel glass">
+      <button class="icon-btn modal-close" id="modalClose" data-cursor aria-label="Tutup detail">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="modal-body" id="modalBody"><h3 id="modalTitle" class="visually-hidden">Detail proyek</h3></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div style="position:fixed;inset:0;z-index:9999;background:#0a0a12;color:#e8e9f1;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;font-family:sans-serif;">
+      <p>Portofolio ini memerlukan JavaScript untuk menampilkan konten.<br />Aktifkan JavaScript lalu muat ulang halaman.</p>
+    </div>
+  </noscript>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
