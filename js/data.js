@@ -233,7 +233,7 @@ const SITE = {
   ],
   socials: [
     { label: "LinkedIn", handle: "faishalputra", url: "https://linkedin.com/in/faishalputra" },
-    { label: "Surel", handle: "emfaishalpe@gmail.com", url: "mailto:emfaishalpe@gmail.com" },
-    { label: "Telepon", handle: "+62 811-6615-065", url: "tel:+628116615065" },
+    { label: "Email", handle: "emfaishalpe@gmail.com", url: "mailto:emfaishalpe@gmail.com" },
+    { label: "Telephone", handle: "+62 811-6615-065", url: "tel:+628116615065" },
   ],
 };
