@@ -102,8 +102,11 @@ function renderAll() {
   $("#experienceList").innerHTML = SITE.experience
     .map((job) => `<article class="experience-card glass reveal">
       <div class="experience-header">
-        <div><p class="mono experience-type">${job.type}</p>
-          <h3>${job.title}</h3><p class="experience-org">${job.org}</p></div>
+        <div class="experience-title-group">
+          ${job.logo ? `<img class="experience-logo" src="${job.logo}" alt="Logo ${job.org}" loading="lazy" decoding="async">` : ""}
+          <div><p class="mono experience-type">${job.type}</p>
+            <h3>${job.title}</h3><p class="experience-org">${job.org}</p></div>
+        </div>
         <p class="mono experience-period">${job.period}</p>
       </div>
       <ul class="experience-highlights">${job.highlights.map((item) => `<li>${item}</li>`).join("")}</ul>

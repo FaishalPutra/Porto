@@ -32,6 +32,7 @@ const SITE = {
     {
       title: "Business & IT Systems Analyst",
       org: "PT Arutmin Indonesia",
+      logo: "assets/logo-arutmin.png",
       period: "Juni hingga Agustus 2025",
       type: "Internship",
       highlights: [
